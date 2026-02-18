@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import dogPic from "./images/dog-puppy-on-garden-royalty-free-image-1586966191.avif";
+
 import { Button, Col, Container, Row } from "react-bootstrap";
 
 function App(): React.JSX.Element {
@@ -40,7 +40,10 @@ function App(): React.JSX.Element {
                                     background: "red",
                                 }}
                             ></div>
-                            <img src={dogPic} alt="cute dog picture" />
+                            <img
+                                src="\dog-puppy-on-garden-royalty-free-image-1586966191.avif"
+                                alt="cute dog picture"
+                            />
                         </div>
                         <p>
                             <Button
