@@ -2,6 +2,7 @@ import { BlockLike } from "typescript";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 import { queryHelpers } from "@testing-library/dom";
+import { makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -160,7 +161,8 @@ export function addNewQuestion(
     name: string,
     type: QuestionType,
 ): Question[] {
-    return [];
+    const x: Question[] = [...questions, makeBlankQuestion(id, name, type)];
+    return x;
 }
 
 /***
