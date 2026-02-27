@@ -1,6 +1,7 @@
 import { BlockLike } from "typescript";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
+import { queryHelpers } from "@testing-library/dom";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -67,7 +68,12 @@ export function getNames(questions: Question[]): string[] {
  * Consumes an array of questions and returns the sum total of all their points added together.
  */
 export function sumPoints(questions: Question[]): number {
-    return 0;
+    const x = questions.reduce(
+        (questionID: number, question: Question) =>
+            questionID + question.points,
+        0,
+    );
+    return x;
 }
 
 /***
