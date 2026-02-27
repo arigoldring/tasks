@@ -2,7 +2,7 @@ import { BlockLike } from "typescript";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 import { queryHelpers } from "@testing-library/dom";
-import { makeBlankQuestion } from "./objects";
+import { duplicateQuestion, makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -252,5 +252,14 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number,
 ): Question[] {
-    return [];
+    return questions.reduce(
+        (questions: Question[], question: Question): Question[] => {
+            questions.push(question);
+            if (question.id === targetId) {
+                questions.push(duplicateQuestion(newId, question));
+            }
+            return questions;
+        },
+        [],
+    );
 }
