@@ -1,3 +1,4 @@
+import { BlockLike } from "typescript";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 
@@ -17,9 +18,11 @@ export function getPublishedQuestions(questions: Question[]): Question[] {
 export function getNonEmptyQuestions(questions: Question[]): Question[] {
     return questions.filter(
         (question: Question) =>
-            question.body === "" &&
-            question.expected === "" &&
-            question.options.length === 0,
+            !(
+                question.body === "" &&
+                question.expected === "" &&
+                question.options.length === 0
+            ),
     );
 }
 
@@ -31,6 +34,12 @@ export function findQuestion(
     questions: Question[],
     id: number,
 ): Question | null {
+    const aQuestion = questions.find(
+        (question: Question): boolean => question.id === id,
+    );
+    if (aQuestion != null) {
+        return aQuestion;
+    }
     return null;
 }
 
@@ -39,7 +48,10 @@ export function findQuestion(
  * with the given `id`.
  */
 export function removeQuestion(questions: Question[], id: number): Question[] {
-    return [];
+    const test = questions.filter(
+        (question: Question): boolean => question.id !== id,
+    );
+    return test;
 }
 
 /***
