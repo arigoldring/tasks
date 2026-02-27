@@ -38,6 +38,7 @@ const [
     BACKUP_ADDITION_QUESTION,
     BACKUP_LETTER_QUESTION,
     BACKUP_COLOR_QUESTION,
+    BACKUP_SHAPE_QUESTION
     BACKUP_SHAPE_QUESTION,
 ] = BACKUP_SIMPLE_QUESTIONS;
 
@@ -48,6 +49,15 @@ describe("Testing the object functions", () => {
     //////////////////////////////////
     // makeBlankQuestion
 
+    test("Testing the makeBlankQuestion function", () => {
+        expect(
+            makeBlankQuestion(1, "Question 1", "multiple_choice_question")
+        ).toEqual(BLANK_QUESTIONS[0]);
+        expect(
+            makeBlankQuestion(47, "My New Question", "multiple_choice_question")
+        ).toEqual(BLANK_QUESTIONS[1]);
+        expect(
+            makeBlankQuestion(2, "Question 2", "short_answer_question")
     test("(3 pts) Testing the makeBlankQuestion function", () => {
         expect(
             makeBlankQuestion(1, "Question 1", "multiple_choice_question"),
