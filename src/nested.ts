@@ -227,7 +227,18 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string,
 ): Question[] {
-    return [];
+    return questions.map((question: Question): Question => {
+        if (question.id !== targetId) {
+            return question;
+        }
+        const copy = [...question.options];
+        if (targetOptionIndex === -1) {
+            copy.push(newOption);
+        } else {
+            copy[targetOptionIndex] = newOption;
+        }
+        return { ...question, options: copy };
+    });
 }
 
 /***
