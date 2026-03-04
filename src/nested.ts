@@ -1,7 +1,7 @@
-import { BlockLike } from "typescript";
+//import { BlockLike } from "typescript";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
-import { queryHelpers } from "@testing-library/dom";
+//import { queryHelpers } from "@testing-library/dom";
 import { duplicateQuestion, makeBlankQuestion } from "./objects";
 
 /**
