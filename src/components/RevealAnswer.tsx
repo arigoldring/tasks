@@ -8,7 +8,7 @@ export function RevealAnswer(): React.JSX.Element {
     }
     return (
         <div>
-            <Button onClick={reveal_test}></Button>
+            <Button onClick={reveal_test}>Reveal Answer</Button>
             {reveal && <div>42</div>}
         </div>
     );
