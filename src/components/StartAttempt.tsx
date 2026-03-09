@@ -18,10 +18,10 @@ export function StartAttempt(): React.JSX.Element {
     return (
         <div>
             <Button onClick={start_quiz} disabled={started || attempt === 0}>
-                Start Attempt
+                Start Quiz
             </Button>
             <Button onClick={stop_quiz} disabled={!started}>
-                Stop Attempt
+                Stop Quiz
             </Button>
             <Button onClick={mulligan} disabled={started}>
                 Mulligan
