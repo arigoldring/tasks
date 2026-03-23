@@ -6,7 +6,7 @@ export function CheckAnswer({
 }: {
     expectedAnswer: string;
 }): React.JSX.Element {
-    const [answer, setAnswer] = useState<string>("");
+    const [answer, setAnswer] = useState<string>("❌");
 
     return (
         <div>
