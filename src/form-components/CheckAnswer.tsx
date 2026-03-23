@@ -20,7 +20,7 @@ export function CheckAnswer({
                         setAnswer(e.target.value);
                     }}
                 />
-                <h3>{answer === expectedAnswer ? "✔️" : "❌"}</h3>
+                {answer === expectedAnswer ? "✔️" : "❌"}
             </Form.Group>
         </div>
     );
