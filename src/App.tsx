@@ -6,7 +6,7 @@ import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
-//import { DoubleHalf } from "./bad-components/DoubleHalf";
+import { DoubleHalf } from "./bad-components/DoubleHalf";
 import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
@@ -14,7 +14,7 @@ import { CheckAnswer } from "./form-components/CheckAnswer";
 import { GiveAttempts } from "./form-components/GiveAttempts";
 import { EditMode } from "./form-components/EditMode";
 //import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
-//import { ChangeColor } from "./form-components/ChangeColor";
+import { ChangeColor } from "./form-components/ChangeColor";
 
 function App(): React.JSX.Element {
     return (
@@ -28,6 +28,10 @@ function App(): React.JSX.Element {
             <GiveAttempts></GiveAttempts>
             <hr></hr>
             <EditMode></EditMode>
+            <hr></hr>
+            <ChangeColor></ChangeColor>
+            <hr></hr>
+            <DoubleHalf></DoubleHalf>
             {/* <EditMode></EditMode> */}
             <hr></hr>
             {/* <ChangeColor></ChangeColor> */}
