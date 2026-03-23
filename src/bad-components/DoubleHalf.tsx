@@ -6,11 +6,11 @@ interface DoubleHalfProps {
     setDhValue: (value: number) => void;
 }
 
-function Doubler({ dhValue, setDhValue }: DoubleHalfProps): React.JSX.Element {
+function Doubler(props: DoubleHalfProps): React.JSX.Element {
     return (
         <Button
             onClick={() => {
-                setDhValue(2 * dhValue);
+                props.setDhValue(2 * props.dhValue);
             }}
         >
             Double
