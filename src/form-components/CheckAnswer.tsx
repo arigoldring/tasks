@@ -6,7 +6,7 @@ export function CheckAnswer({
 }: {
     expectedAnswer: string;
 }): React.JSX.Element {
-    const [answer, setAnswer] = useState<string>("❌");
+    const [answer, setAnswer] = useState<string>("");
 
     return (
         <div>
@@ -20,7 +20,7 @@ export function CheckAnswer({
                         setAnswer(e.target.value);
                     }}
                 />
-                {answer === expectedAnswer && <h3>✔️</h3>}
+                <h3>{answer === expectedAnswer ? "✔️" : "❌"}</h3>
             </Form.Group>
         </div>
     );
