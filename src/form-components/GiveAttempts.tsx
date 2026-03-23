@@ -32,7 +32,7 @@ export function GiveAttempts(): React.JSX.Element {
                 >
                     gain
                 </Button>
-                <p>Remaining Attempts: {attempts}</p>
+                <p>Remaining Attempts: {attempts + inputattempts}</p>
             </Form.Group>
         </div>
     );
