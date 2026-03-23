@@ -27,12 +27,12 @@ export function GiveAttempts(): React.JSX.Element {
                 </Button>
                 <Button
                     onClick={() => {
-                        setAttempts(inputattempts);
+                        setAttempts(inputattempts + attempts);
                     }}
                 >
                     gain
                 </Button>
-                <p>Remaining Attempts: {attempts + inputattempts}</p>
+                <p>Remaining Attempts: {attempts}</p>
             </Form.Group>
         </div>
     );
