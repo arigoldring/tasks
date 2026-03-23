@@ -7,7 +7,9 @@ export function CheckAnswer({
     expectedAnswer: string;
 }): React.JSX.Element {
     const [answer, setAnswer] = useState<string>("");
-
+    function updateAnswer(event: React.ChangeEvent<HTMLInputElement>) {
+        setAnswer(event.target.value);
+    }
     return (
         <div>
             <Form.Group controlId="expected_answer">
@@ -16,12 +18,11 @@ export function CheckAnswer({
                     type="text"
                     value={answer}
                     placeholder="Enter your answer here"
-                    onChange={(e) => {
-                        setAnswer(e.target.value);
-                    }}
+                    onChange={updateAnswer}
                 />
-                {answer === expectedAnswer ? "✔️" : "❌"}
             </Form.Group>
+
+            <div>{answer === expectedAnswer ? "✔️" : "❌"}</div>
         </div>
     );
 }
